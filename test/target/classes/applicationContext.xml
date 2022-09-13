@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 스프링 컨테이너: 스프링을 설정하는 파일 -->
+	<!-- <bean id="phone" class="test.Iphone"/> -->
+	<!-- 스프링에서 phone을 호출하면 Iphone객체를 생성해준다-->
+	<!-- 설정만 바꿔주면 알아서 new 객체화를 자동으로 해준다 -->
+	<!-- 
+	<bean id="phone" class="test.Galaxy" init-method="initMethod" destroy-method="destroyMethod"/>
+	<bean id="iphone" class="test.Iphone" lazy-init="true"/>
+	lazy-init = true 속성이 있으면 iphone을 호출해야만 객체 생성
+	지연 생성방식
+	기본속성으로 scope="singleton" 이 설정되어있음
+	만약 여러개의 객체가 필요할때는 scope="prototype" 으로 설정
+	
+	
+	<bean id="iphone" class="test.Iphone">
+		<constructor-arg ref="aw"/>
+		<constructor-arg value="9890"/>
+	</bean>
+	
+	<bean id="aw" class="test.AppleWatch"/>
+	 -->
+	 <bean id="iphoneA" class="test2.Iphone" lazy-init="true">
+	 	<constructor-arg ref="aw"/>
+	 </bean>
+	 
+	 <bean id="iphoneS" class="test2.Iphone" lazy-init="true">
+	 	<constructor-arg ref="sw"/>
+	 </bean>
+	 
+	 <bean id="aw" class="test2.AppleWatch"/>
+	 <bean id="sw" class="test2.SamsungWatch"/>
+	 
+	 
+	
+</beans>
